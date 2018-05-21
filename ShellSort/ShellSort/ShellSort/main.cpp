@@ -7,14 +7,18 @@
 //
 
 #include <iostream>
+#include <stdio.h>
 using namespace std;
 
 void show(int * tab, int size){
-    cout << endl;
+    printf("\n");
     for (int i = 0; i < size;  i++) {
-        cout << tab[i] << " ";
-    }
+        
+        printf("%d", tab[i]);
+        printf("%s", " ");
+        
     
+}
 }
 void ShellSort(int *tab, int size){
     for (int gap = size/ 2; gap > 0; gap /= 2) {
@@ -36,12 +40,15 @@ int main(int argc, const char * argv[]) {
     int size = 1;
     int *tab;
    
-        while (size > 0) {
-            cin >> size;
+        while (true) {
             
+            scanf("%d", &size);
+            if(size == 0){
+                return 0;
+            }
             tab = new int[size];
             for (int i = 0; i < size;  i++) {
-                cin >> tab[i];
+                scanf("%d", &tab[i]);
             }
             
             ShellSort(tab, size);
